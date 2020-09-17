@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>STAGING - Player has policy_key and bcov_auth (PAPI + PAS)</h1>
+    JWT valid until october 03
+    
+    <div style="max-width: 960px;">
+        <video-js id="video" data-account="6176798895200" data-player="3lQX2782C" data-embed="default" controls="" data-playlist-id="" data-application-id="" class="vjs-fluid"></video-js>
+    </div>
+    <script src="https://players.staging.brightcove.net/6176798895200/3lQX2782C_default/index.min.js"></script>
+    <script type="text/javascript">
+        videojs.getPlayer('video').ready(function() {
+            var bgPlayer = this;
+            
+            bgPlayer.catalog.setBcovAuthToken("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NpZCI6IjYxNzY3OTg4OTUyMDAiLCJjb25pZCI6IjYxNzcyOTkyMzAyMDAiLCJpYXQiOjE1OTkxNTYwMTIsImV4cCI6MTYwMTc0ODAxMn0.SvS18-4vJO189xN45EMTBabk3QwPoquYGv_Yr4s16xoW6rSv6udlZkV8m2_fU6JrYCPzmbGaG4as4xIEtAlPynL4vo2X2JtJ9WwgR7xW_yl1xsmh-cUc-m240HrEjeWN8FYfWTIzY34imEixGoV3NSuuysIRDOfOn76tcYzRcULyfEiE3Oabptd28jU3av2hvFLinNmAW2ac8VZrm4dyQH4-Nav-01OC28r8XZZF0oYUCl477cn_2Y1TmKEuoJAsOiUCSYN1g8q7TeOEUxytEow8VVtEA-A3brmY9tVWuX-CfE-4mR9JXPK6t25gGFosYeWwha8chLTByPHo-ajuZw");
+            bgPlayer.catalog.get({
+                    id: '6177299230200',
+                    type: 'video'
+                })
+                .then(function(data) {
+                    console.log("data : ", data)
+                    bgPlayer.catalog.load(data);
+                    bgPlayer.play();
+                }).
+            catch(function(error) {
+                addmask();
+                console.log("ERROR CAUGHT", error);
+            });
+        });
+    </script>
+</body>
+
+</html>

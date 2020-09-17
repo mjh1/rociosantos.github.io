@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>PROD - Player has policy_key and bcov_auth (PAPI + PAS)</h1>
+    JWT valid until october 03
+    
+    <div style="max-width: 960px;">
+        <video-js id="video" data-account="" data-player="" data-embed="default" controls="" data-playlist-id="" data-application-id="" class="vjs-fluid"></video-js>
+    </div>
+    <script src=""></script>
+    <script type="text/javascript">
+        videojs.getPlayer('video').ready(function() {
+            var bgPlayer = this;
+            
+            bgPlayer.catalog.setBcovAuthToken("");
+            bgPlayer.catalog.get({
+                    id: '',
+                    type: 'video'
+                })
+                .then(function(data) {
+                    console.log("data : ", data)
+                    bgPlayer.catalog.load(data);
+                    bgPlayer.play();
+                }).
+            catch(function(error) {
+                addmask();
+                console.log("ERROR CAUGHT", error);
+            });
+        });
+    </script>
+</body>
+
+</html>
