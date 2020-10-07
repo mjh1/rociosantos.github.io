@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>QA - Player has policy_key and bcov_auth (PAPI + PAS)</h1>
+    JWT valid until october 03
+    
+    <div style="max-width: 960px;">
+        <video-js id="video" data-account="70700018638202" data-player="Ku3Ywi5ysl" data-embed="default" controls="" data-playlist-id="" data-application-id="" class="vjs-fluid"></video-js>
+    </div>
+    <script src="https://bc-players-qa.s3.amazonaws.com/70700018638202/Ku3Ywi5ysl_default/index.min.js"></script>
+    <script type="text/javascript">
+        videojs.getPlayer('video').ready(function() {
+            var bgPlayer = this;
+            
+            bgPlayer.catalog.setBcovAuthToken("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NpZCI6IjcwNzAwMDE4NjM4MjAyIiwiY29uaWQiOiI3MDcwMDYxMjk5NTIwMiIsImlhdCI6MTYwMjA4OTcyNywiZXhwIjoxNjA0MTYxMDE5LCJkbGltaXQiOjF9.NevkpXCwxGFQ_OriWxfRz62HOb5SwtwoRxz6wnfZEAxs-SGuyCYRI-Q8BC7YiYs6ZL1-G-3-6cjIvYcmiS3pLjb6rZeu6ItOR7aidwBGK8ioZ8o8DKRuK9fqUMqlSvq4RRtCVNFyw6RVBt7LNTZteACXPHx9tcpEyhrMLt8QtrXs-uY-Ev9--Ky3yrmVuP0_3BKrUlACKIbtATJ5xewWs71XVIbGTZiivRvq3s5YsPXRRDH5rnaHqFzZdJ4cvjIOeTIjwpnuBZkdcdBujImnSKXp1YCKSZEgCAy19gIxZfD_cNSEp_FSCkfUnSLDyM2dC0pjFJZqD0g_kVOnx1Cqyg");
+            bgPlayer.catalog.get({
+                    id: '70700612995202',
+                    type: 'video'
+                })
+                .then(function(data) {
+                    console.log("data : ", data)
+                    bgPlayer.catalog.load(data);
+                    bgPlayer.play();
+                }).
+            catch(function(error) {
+                addmask();
+                console.log("ERROR CAUGHT", error);
+            });
+        });
+    </script>
+</body>
+
+</html>
