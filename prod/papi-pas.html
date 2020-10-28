@@ -14,14 +14,14 @@
     <div style="max-width: 960px;">
         <video-js id="video" data-account="" data-player="" data-embed="default" controls="" data-playlist-id="" data-application-id="" class="vjs-fluid"></video-js>
     </div>
-    <script src=""></script>
+    <script src="https://players.brightcove.net/6191645747001/gOSRvhm1A_default/index.min.js"></script>
     <script type="text/javascript">
         videojs.getPlayer('video').ready(function() {
             var bgPlayer = this;
             
-            bgPlayer.catalog.setBcovAuthToken("");
+            bgPlayer.catalog.setBcovAuthToken("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NpZCI6IjYxOTE2NDU3NDcwMDEiLCJjb25pZCI6IjYxOTE5NTgyOTYwMDEiLCJpYXQiOjE2MDMxMjM3MTksImV4cCI6MTYwNTcxNTcxOX0.SeyZgr-aLIPw2NUhhhiAfLOO_9Q-d8jQowSWSOxpcTQtGeApKmgmCaLtc3jAXfkXcnfu4DTYtSVyAEftw0SOpW8rRX-uOKl9aqkG9J5aIruxb4MWuhqlAF0PckUhJuYyGTnJf1lbcPZcVZP1BHGey5rwkEVg5vPuOkAJQ3vWFVJKlLPkxC5gjUz28kd33SrAvFKi607FhFV7FxSbcJtSOS7f6djJg3PKDwz6LqfDmm2GnZVX7ZcHVW8ERdTF26E2bK9P_5F6Qtf9ulm4YlTbYqDpccRqsymC-SwFjLw0mPosa3I26DAYy1qdSEdh7RSh--ei6yJMKfPb5u20VdD-6g");
             bgPlayer.catalog.get({
-                    id: '',
+                    id: '6191958296001',
                     type: 'video'
                 })
                 .then(function(data) {
