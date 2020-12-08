@@ -9,16 +9,16 @@
 
 <body>
     <h1>PROD - Player with bcov_auth and no policy_key (EPA + PAS)</h1>
-    <video-js id="video" data-account="70700018638202" data-player="fdJBaPNZW" data-embed="default" controls="" data-playlist-id=""
+    <video-js id="video" data-account="6191645747001" data-player="fqhwZ4YTh" data-embed="default" controls="" data-playlist-id=""
         data-application-id="" width="960" height="540"></video-js>
-    <script src=""></script>
+        <script src="https://players.brightcove.net/6191645747001/fqhwZ4YTh_default/index.min.js"></script>
     <script type="text/javascript">
         videojs.getPlayer('video').ready(function () {
             var bgPlayer = this;
             bgPlayer.catalog.setPolicyKey(null);
-            bgPlayer.catalog.setBcovAuthToken("");
+            bgPlayer.catalog.setBcovAuthToken("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NpZCI6IjYxNzY3OTg4OTUyMDAiLCJwcmlkIjoiMzYyYjhjMTMtYjg4NC00Y2EyLWE4NWUtNzQxOGVlNmY2ZGE5IiwiaWF0IjoxNjAzMTIzNzE5LCJleHAiOjE2MDU3MTU3MTl9.nKknpeFTA40oXkc2zlorE6jC0er6hp1s9HfqWXyo5cERRsUcE1bUg_615tZODoSxv7sV0sLQRf3vdLPqC4zYxo8o3dE7S-zP_9Ggwwu84D5KaAh6pTbdcvEkncl8e6t8UpS-UJ1Qa7bzREhALRQGJXuhkPjrqa6mBLip5D1-uOOmtt-ubzmV7WQNmh2ucAu-a2PhucqS2icO62g89M6-bGUphKZ4yAcJTuGpfAqUqWzWaIRhjj25WTPP2uNgarYns8hAtCzw8bnZr4-iDMc2I2Rhq9-RNODdmLLQaByMNgM8QEQ3IMQFSH-VD79531ZkKtCwNBXGZ0UNEhy6EgKaZQ");
             bgPlayer.catalog.get({
-                id: '',
+                id: '6202665602001',
                 type: 'video'
             })
                 .then(function (data) {
