@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>PROD - Player has policy_key and bcov_auth (PAPI + PAS) and dlimit</h1>
+    JWT valid until March 04
+
+    <div style="max-width: 960px;">
+        <video-js id="video" data-account="4590388345001" data-player="OZLDfgJrcM" data-embed="default" controls="" data-playlist-id="" data-application-id="" class="vjs-fluid"></video-js>
+    </div>
+    <script src="//s3.amazonaws.com/bc-players-qa/4590388345001/OZLDfgJrcM_default/index.min.js"></script>
+    <script type="text/javascript">
+        videojs.getPlayer('video').ready(function() {
+            var bgPlayer = this;
+
+            bgPlayer.catalog.setBcovAuthToken("ewoJInR5cGUiOiAiSldUIiwKCSJhbGciOiAiUlMyNTYiCn0.ewogICJhY2NpZCI6ICI0NTkwMzg4MzQ1MDAxIiwKICAiY2xpbWl0IjogMSwKICAiZGxpbWl0IjogMiwKICAiY2JlaCI6ICJCTE9DS19ORVdfVVNFUiIsCiAgInVpZCI6ICJlZWIyLTRiMWQtYmMzMC05ZmMxYWY3ZTEwZDYtbWpoIiwKICAiaWF0IjogMTY0OTQxMDg2NiwKICAiZXhwIjogMTY0OTQxNDQ2Ngp9.pe2oiYctI6MEkrslpI3yJRsrM3CJLWdg5Jq-9NUIRRu5os_aPizcAMkgkuMLl17xUk8cVA0JQ-pYoFuSt9sOGedQyBCTe3Wbliyy7EMSVchtlmAxjPbsFal7IxalVRXelE2fI1B_cuNciq3JMvCFMYvCwl7lwV96Sm3aSTeJJafiDv6k-J3mVh17ycetuU76HJC924mpmd7eAPr96ZIvWmCB1olkeE_haNGPG-cFDmOhIVNXgqaEewlhvgD5Y5GVUJ7E_gZxa2XZym25ddMnQu79dPtpL6_hpFw4fwSdyKEI6QBbfFE-Pfu_e9r5gAZWLnneNyMIXWX-c4ZkT5hmeQ");
+            bgPlayer.catalog.get({
+                    id: '70701995516202',
+                    type: 'video'
+                })
+                .then(function(data) {
+                    console.log("data : ", data)
+                    bgPlayer.catalog.load(data);
+                    bgPlayer.play();
+                }).
+            catch(function(error) {
+                addmask();
+                console.log("ERROR CAUGHT", error);
+            });
+        });
+    </script>
+</body>
